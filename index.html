@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-edu</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1 class="logo">
+            <a href="file:///C:/Users/ASUS%20USER/Desktop/web/Project%20Web/index.html#">E-<strong>e</strong>du</a>
+        </h1>
+        <ul class="menutop">
+            <li><a class="active" href="#">Trang Chủ</a></li>
+            <li><a href="#">Danh Mục</a>
+                <ul id="sub1">
+                    <hr>
+                    <li><a href="#">Toán Cơ Bản</a></li>
+                    <hr>
+                    <li><a href="#">Toán Rời Rạc</a></li>
+                    <hr>
+                    <li><a href="#">Đại Tuyến Tính</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Tài Liệu</a></li>
+            <li><a href="#">Thảo Luận</a></li>
+            <li><a href="#">Phản Hồi</a></li>
+        </ul>
+    </header>
+
+    <section class="banner">
+        <h2>Chào mừng đến với E-Edu</h2>
+        <h3>Hãy để mọi thứ dễ dàng hơn!</h3>
+        <a href="#contens">Bắt đầu thôi!!</a>
+    </section>
+    <div id="contens">
+        <div class="bground1" id="popup1">
+            <!-- <section class="contens">
+                <form id="formid">
+                    Chọn loại Phương Trình Đồng Dư:
+                    <select id="opt" onchange="changestates(this)">
+                        <option value=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- Chọn -- </option>
+                        <option value="single">Phương Trình Đơn</option>
+                        <option value="multi">Hệ Phương Trình</option>
+                    </select>
+                    <div id="cts1">
+                        <div id="loca2"></div>
+                    </div>
+                    <div id="cts">
+                        <div id="turnno"></div>
+                    </div>
+                    <div id="location"></div>
+                </form>
+            -->
+            <div class="container" id="contaners">
+                <div class="card">
+                    <div class="face face1">
+                        <div class="conten">
+                            <img src="./anh_hpt.png" alt="hpt" width="80" height="80" id="img1">
+                            <h3>Đồng Dư</h3>
+                        </div>
+                    </div>
+                    <div class="face face2">
+                        <div class="conten">
+                            <p>Đáp án và lời giải các bài tập về Đồng dư. Bao gồm: Phương trình đơn và Hệ phương trình
+                                Đồng
+                                dư.</p>
+                            <a href="#popup1" onclick="popup()">Bắt Đầu</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="face face1">
+                        <div class="conten">
+                            <img src="uoc_boi.png" alt="hpt" width="80" height="80">
+                            <h3>Ước Và Bội</h3>
+                        </div>
+                    </div>
+                    <div class="face face2">
+                        <div class="conten">
+                            <p>Đáp án và lời giải các bài tập về Ước và Bội. Bao gồm: ƯCLN và Bội Chung nhỏ nhất.</p>
+                            <a href="#popup1" onclick="popup_2nd()">Bắt Đầu</a>
+                        </div>
+                    </div>
+                </div>
+                </div> -->
+            </div>
+        </div>
+        <div id="popupstart">
+            <span> Chọn loại Phương Trình Đồng Dư:</span>
+            <select id="opt" onchange="changestates(this)">
+                <option value=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- Chọn -- </option>
+                <option value="single">Phương Trình Đơn</option>
+                <option value="multi">Hệ Phương Trình</option>
+            </select>
+            <div id="cts1">
+                <div id="loca2"></div>
+            </div>
+            <div id="cts">
+                <div id="turnno"></div>
+            </div>
+            <div id="location"></div>
+            <br>
+            <div id="notification"></div>
+            <br>
+            <div id="kq"></div>
+            <br>
+            <a href="#popupstart" onclick="testresult()" id="start">Kết Quả</a>
+            <a href="#popupstart" onclick="inresult()" id="printresult">In Lời Giải</a>
+            <br><br>
+            <p>Note: Chọn "Kết Quả" để chạy kết quả trước khi xem lời giải.</p>
+            <p>Chọn "In Lời Giải" để xem chi tiết bài giải.</p>
+            <p>Lựa chọn "Hủy" nếu không muốn tiếp tục.</p>
+            <a href="#popupstart" onclick="popup()" id="close">Hủy</a>
+        </div>
+        <div id="popupnd">
+            <h3>Nhập các giá trị của a và b:</h3>
+            <label for='a1' id='la1'>Nhập a</label>
+            <input type='number' id='a1' placeholder='Chưa được nhập'>
+            <br><label for='b1' id='lb1'>Nhập b</label>
+            <input type='number' id='b1' placeholder='Chưa được nhập'>
+            <br>
+            <a href="#popupnd" onclick="UandB()">Nhập</a>
+            <div id="UCLN"></div>
+            <div id="depsUC"></div>
+            <div id="BCNN"></div>
+            <div id="noti"></div>
+            <div id="depsboi"></div><br>
+            <p>Note: Lựa chọn "Hủy" nếu không muốn tiếp tục.</p>
+            <a href="#popupnd" onclick="popup_2nd()" id="close">Hủy</a>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var pt = {
+            a: [],
+            b: [],
+            mod: [],
+            n: 0
+        }
+        // a: [11, 7, 10, 2],
+        // b: [2, 4, 6, 8],
+        // mod: [3, 5, 7, 11],
+        // n: 4
+        var answer = {
+            a_sgle: [],
+            b_sgle: [],
+            mod_sgle: [],
+            a_answ: [],
+            b_answ: [],
+            mod_answ: [],
+            index_mod: [],
+            val_a: [],
+            val_t: [],
+            temp_a: [],
+            temp_t: [],
+            step: 0
+        }
+        var answer_1 = {
+            check2: [],
+            check3: [],
+            a: [],
+            b: [],
+            mod: [],
+            j: [],
+            a_new: [],
+            b_new: [],
+            mod_new: []
+        }
+        function changestates(obj) {
+            var states = obj.value;
+            if (states == '')
+                alert("Bạn chưa chọn loại phương trình!");
+            else if (states == 'single')
+                showformsingle();
+            else if (states == 'multi') {
+                shown();
+            }
+        }
+        var createClickHandler = function (a) {
+            return function () {
+                var data = "<br><label for='a1' id='la1'>Nhập a</label>" + (a + 1)
+                    + "<input type='number' id='a1' placeholder='Chưa được nhập'  >"
+                    + "<br><label for='b1' id='lb1'>Nhập b</label>" + (a + 1)
+                    + "<input type='number' id='b1' placeholder='Chưa được nhập'  >"
+                    + "<br><label for='mod1' id='lmod1'>Nhập mod</label>"
+                    + (a + 1) + "<input type='number' id='mod1' placeholder='Chưa được nhập' >"
+                    + "<br><a href='#popupstart' onclick='getelementmul()'>Nhập</a";
+                document.getElementById("location").innerHTML = data;
+            };
+        };
+
+        function testresult() {
+            var er = 1;
+            console.log(pt.a.length, pt.b.length, pt.mod.length);
+            if (pt.n == 0) {
+                if (pt.a.length == 1 && pt.b.length == 1 && pt.mod.length == 1) {
+                    equation_single(0);
+                    er = 1;
+                }
+                else {
+                    er = 0;
+                    document.getElementById("kq").innerHTML = "<p class='error'>Chưa nhập đầy đủ thông tin!</p>";
+                }
+            }
+            else {
+                if (pt.a.length == pt.n || pt.b.length == pt.n || pt.mod.length == pt.n) {
+                    equation_mutiple();
+                    er = 1;
+                }
+                else {
+                    er = 0;
+                    document.getElementById("kq").innerHTML = "<p class='error'>Chưa nhập đầy đủ thông tin!</p>"
+                }
+
+            }
+            if (er == 1) {
+                var i = "Kết Quả: <div id='kqua'>" + pt.a[0] + "x" + " đồng dư với " + pt.b[0] + " theo modulo: " + pt.mod[0] + "<div>";
+                document.getElementById("kq").innerHTML = i;
+            }
+        }
+        function inresult() {
+            if (pt.n == 0) {
+                console.log("Vo duoc day!")
+                f_1answer();
+            }
+            else {
+                console.log("vo duoc day");
+                f_answer();
+            }
+
+        }
+        function getn() {
+            pt.n = document.getElementById("n1").value;
+            if (pt.n > 1) {
+                for (var a = 0; a < pt.n; a++) {
+                    var b = document.createElement("a");
+                    // b.setAttribute("type", "button");
+                    b.setAttribute("value", "PT " + (a + 1));
+                    b.id = "btn";
+                    b.onclick = createClickHandler(a);
+                    b.innerHTML = "PT " + (a + 1);
+                    //b.appendChild(t);
+                    document.getElementById("turnno").appendChild(b);
+                }
+            }
+        }
+        function shown() {
+            var free_single = "<div id='location'></div>";
+            var datan = "<label for='n1'>Nhập số PT:</label><input type='number' id='n1' >"
+                + "<br><a href='#popupstart' onclick='getn()'>Đồng ý</a";
+            document.getElementById("loca2").innerHTML = datan;
+            document.getElementById("location").innerHTML = free_single;
+            document.getElementById("kq").innerHTML = "<div id='kq'></div>";
+
+        }
+        function showformsingle() {
+            var free_n = "<div id='loca2'></div>";
+            var data = "<label for='a'>Nhập a:</label><input type='number' id='a' >"
+                + "<br><label for='b'>Nhập b:</label><input type='number' id='b' >"
+                + "<br><label for='mod'>Nhập mod:</label><input type='number' id='mod' >"
+                + "<br><a href='#popupstart' onclick='getelement()'>Nhập</a";
+            document.getElementById("location").innerHTML = data;
+            document.getElementById("loca2").innerHTML = free_n;
+            document.getElementById("kq").innerHTML = "<div id='kq'></div>";
+        }
+        function getelementmul() {
+            pt.a.push(document.getElementById("a1").value);
+            pt.b.push(document.getElementById("b1").value);
+            pt.mod.push(document.getElementById("mod1").value);
+        }
+
+        function getelement() {
+            pt.a.push(document.getElementById("a").value);
+            pt.b.push(document.getElementById("b").value);
+            pt.mod.push(document.getElementById("mod").value);
+        }
+
+        function MAX_2UC(t1, t2) {
+            if (t1 == 0 || t2 == 0)
+                return parseInt(t1) + parseInt(t2);
+            while (t1 != t2) {
+                if (t1 > t2) {
+                    t1 = t1 - t2;
+                }
+                else {
+                    t2 = t2 - t1;
+                }
+            }
+            return t1;
+        }
+        function MAX_3UC(t1, t2, t3) {
+            if (t1 == 0)
+                return MAX_2UC(t2, t3);
+            if (t2 == 0)
+                return MAX_2UC(t1, t3);
+            if (t3 == 0)
+                return MAX_2UC(t1, t2);
+            while (t1 != t2) {
+                if (t1 > t2) {
+                    t1 = t1 - t2;
+                }
+                else {
+                    t2 = t2 - t1;
+                }
+            }
+            while (t1 != t3) {
+                if (t1 > t3) {
+                    t1 = t1 - t3;
+                }
+                else {
+                    t3 = t3 - t1;
+                }
+            }
+            return t1;
+        }
+        function index_max() {
+            var max_temp = 0;
+            for (var i = 0; i < pt.n; i++) {
+                if (max_temp < pt.mod[i]) {
+                    max_temp = pt.mod[i];
+                }
+            }
+            for (var i = 0; i < pt.n; i++) {
+                if (max_temp == pt.mod[i]) {
+                    return i;
+                }
+            }
+        }
+        function equation_single(i) {
+            var check = MAX_3UC(pt.a[i], pt.b[i], pt.mod[i]);
+            pt.a[i] = parseInt(pt.a[i]);
+            pt.b[i] = parseInt(pt.b[i]);
+            pt.mod[i] = parseInt(pt.mod[i]);
+            answer_1.a.push(pt.a[i]);
+            answer_1.b.push(pt.b[i]);
+            answer_1.mod.push(pt.mod[i]);
+            if (MAX_3UC(pt.a[i], pt.b[i], pt.mod[i]) != 1 && pt.b[i] > 0) {
+                answer_1.check3.push(check);
+                pt.a[i] = pt.a[i] / check;
+                pt.b[i] = pt.b[i] / check;
+                pt.mod[i] = pt.mod[i] / check;
+                answer_1.a_new.push(pt.a[i]);
+                answer_1.b_new.push(pt.b[i]);
+                answer_1.mod_new.push(pt.mod[i]);
+                equation_single(i);
+            }
+            else {
+                check = MAX_2UC(pt.a[i], pt.b[i]);
+                if (check != 1 && pt.b[i] > 0) {
+                    answer_1.check2.push(check);
+                    pt.a[i] = pt.a[i] / check;
+                    pt.b[i] = pt.b[i] / check;
+                    answer_1.a_new.push(pt.a[i]);
+                    answer_1.b_new.push(pt.b[i]);
+                    equation_single(i);
+                }
+                else {
+                    var j = 1;
+                    while (pt.a[i] != 1) {
+                        if (pt.a[i] != MAX_2UC(pt.a[i], parseInt(pt.b[i]) + parseInt(j * pt.mod[i]))) {
+                            j++;
+                        }
+                        else {
+                            answer_1.j.push(j);
+                            check = MAX_3UC(pt.a[i], pt.b[i], pt.mod[i]);
+                            if (check != 1 && pt.b[i] > 0) {
+                                answer_1.check3.push(check);
+                                pt.a[i] = pt.a[i] / check;
+                                pt.b[i] = pt.b[i] / check;
+                                pt.mod[i] = pt.mod[i] / check;
+                                answer_1.a_new.push(pt.a[i]);
+                                answer_1.b_new.push(pt.b[i]);
+                                answer_1.mod_new.push(pt.mod[i]);
+                                equation_single(i);
+                            }
+                            else {
+                                pt.b[i] = (parseInt(pt.b[i]) + parseInt(j * pt.mod[i])) / pt.a[i];
+                                pt.a[i] = pt.a[i] / pt.a[i];
+                                answer_1.a_new.push(pt.a[i]);
+                                answer_1.b_new.push(pt.b[i]);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        function set_var(c) {
+            for (var i = c; i < (pt.n); i++) {
+                pt.a[i] = pt.a[i + 1];
+                pt.b[i] = pt.b[i + 1];
+                pt.mod[i] = pt.mod[i + 1]
+            }
+            pt.n = pt.n - 1;
+
+        }
+        function equation_mutiple() {
+            for (var i = 0; i < pt.n; i++) {
+                pt.a[i] = parseInt(pt.a[i]);
+                pt.b[i] = parseInt(pt.b[i]);
+                pt.mod[i] = parseInt(pt.mod[i]);
+                equation_single(i);
+                answer.a_sgle.push(pt.a[i]);
+                answer.b_sgle.push(pt.b[i]);
+                answer.mod_sgle.push(pt.mod[i]);
+                //document.write(answer.a_sgle[i], answer.b_sgle[i], answer.mod_sgle[i], "push tam  vo" + i);
+            }
+            var n = pt.n - 1;
+            answer.step = n;
+            var stp = 0;
+            var stp_2 = 1;
+            for (var j = 0; j < n; j++) {
+                //document.write("j = " + j + "n =" + n);
+                var check = index_max();
+                answer.index_mod.push(check + 1);
+                //document.write(pt.a[check], pt.b[check], pt.mod[check], "check = ", check);
+                var t = 0;
+                var a = 0;
+                var tempt = 0;
+                var tempa = 0;
+                var i = 1;
+                t = parseInt(pt.mod[check]);
+                tempt = t;
+                answer.temp_t.push(tempt);
+                a = pt.b[check];
+                tempa = a;
+                answer.temp_a.push(tempa);
+                set_var(check);
+                var check = index_max();
+                answer.index_mod.push(check + 1);
+                //document.write(pt.a[check], pt.b[check], pt.mod[check], 'sau khi setvar');
+                var found = 0;
+                while (found == 0) {
+                    if (t - (i * pt.mod[check]) >= 0) {
+                        i++;
+                    }
+                    else {
+                        found = 1;
+                    }
+                }
+                t = t - ((i == 1 ? i : i - 1) * pt.mod[check]);
+                pt.a[check] = t;
+                answer.val_t.push(t);
+                answer.a_answ.push(pt.a[check]);
+                i = 0;
+                found = 0;
+                while (found == 0) {
+                    if (a - (i * pt.mod[check]) >= 0) {
+                        i++;
+                    }
+                    else {
+                        found = 1;
+                    }
+                }
+                a = a - ((i == 1 ? i : i - 1) * pt.mod[check]);
+                pt.b[check] = pt.b[check] - a;
+                answer.val_a.push(a);
+                answer.mod_answ.push(pt.mod[check]);
+                if (pt.b[check] < 0) {
+                    pt.b[check] = parseInt(pt.b[check]) + parseInt(pt.mod[check]);
+                }
+                answer.b_answ.push(pt.b[check]);
+                //document.write(pt.a[check], pt.b[check], pt.mod[check], "tinh duoc pt moi", check)
+                equation_single(check);
+                answer.a_answ.push(pt.a[check]);
+                answer.b_answ.push(pt.b[check]);
+                answer.mod_answ.push(pt.mod[check]);
+                t = pt.mod[check];
+                //answer.val_t.push(t);
+                a = pt.b[check];
+                //answer.val_a.push(a);
+                t = tempt * t;
+                answer.val_t.push(t);
+                a = (tempt * a) + parseInt(tempa);
+                answer.val_a.push(a);
+                pt.mod[check] = t;
+                pt.b[check] = a;
+                answer.a_answ.push(pt.a[check]);
+                answer.b_answ.push(pt.b[check]);
+                answer.mod_answ.push(pt.mod[check]);
+            }
+        }
+        function f_1answer() {
+            var i = 0;
+            var c = 1;
+            var len = answer_1.check3.length;
+            var lent = answer_1.check2.length;
+            document.write("Ta có: " + answer_1.a[i] + "x = " + answer_1.b[i] + " mod(" + answer_1.mod[i] + ") <br>");
+            while (len > 0) {
+                document.write("ƯCLN của " + answer_1.a[0] + ", " + answer_1.b[0] + " ," + answer_1.mod[0] + " là " + answer_1.check3[i] + "<br>");
+                document.write("Chia a, b, mod cho ƯCLN ta được : <br>");
+                if (answer_1.a_new[i] == 1) {
+                    c = 0;
+                    document.write("<=> " + answer_1.a_new[i] + "x = " + answer_1.b_new[i] + " mod(" + answer_1.mod_new[i] + ")<br>");
+                }
+                else {
+                    document.write("<=> " + answer_1.a_new[i] + "x = " + answer_1.b_new[i] + " mod(" + answer_1.mod_new[i] + ")<br>");
+                    //them kiem tra 2uc bang while hoac if o dong nay
+                    document.write("<=> " + answer_1.a_new[i] + "x = " + answer_1.b_new[i] + "+" + answer_1.j + "*" + answer_1.mod_new[i] + " mod(" + answer_1.mod_new[i] + ")<br>");
+                    document.write("<=> " + answer_1.a_new[i] + "x = " + (parseInt(answer_1.b_new[i]) + parseInt(answer_1.j * answer_1.mod_new[i])) + " mod(" + answer_1.mod_new[i] + ")<br>");
+                }
+                if (len == 1 && c == 1) {
+                    document.write("<=> " + answer_1.a_new[i + 1] + "x = " + answer_1.b_new[i + 1] + " mod(" + aanswer_1.mod_new[i] + ")");
+                }
+                i++;
+                len--;
+            }
+            i = 0;
+            while (lent > 0) {
+                document.write("ƯCLN của " + answer_1.a[0] + ", " + answer_1.b[0] + " , là " + answer_1.mod[i] + "<br>");
+                document.write("Chia a, b cho ƯCLN ta được : <br>");
+                // document.write("<=> " + answer_1.a_new[i] + "x = " + answer_1.b_new[i] + " mod(" + answer_1.mod[i] + ")<br>");
+                if (answer_1.a_new[i] == 1) {
+                    c = 0;
+                    document.write("<=> " + answer_1.a_new[i] + "x = " + answer_1.b_new[i] + " mod(" + answer_1.mod[i] + ")<br>");
+                }
+                else {
+                    //them kiem tra 3uc bang while hoac if o dong nay
+                    document.write("<=> " + answer_1.a_new[i] + "x = " + answer_1.b_new[i] + "+" + answer_1.j + "*" + answer_1.mod[i] + " mod(" + answer_1.mod[i] + ")<br>");
+                    document.write("<=> " + answer_1.a_new[i] + "x = " + (parseInt(answer_1.b_new[i]) + parseInt(answer_1.j * answer_1.mod[i])) + " mod(" + answer_1.mod[i] + ")<br>");
+                }
+                if (lent == 1 && c == 1) {
+                    document.write("<=> " + answer_1.a_new[i + 1] + "x = " + answer_1.b_new[i + 1] + " mod(" + answer_1.mod[i] + ") cc");
+                }
+                lent--;
+            }
+            
+        }
+        function f_answer() {
+            document.write("Giải các phương trình đơn: <br>");
+            for (var i = 0; i < answer.step + 1; i++) {
+                document.write(answer.a_sgle[i] + "x đồng dư với " + answer.b_sgle[i] + " mod" + "(" + answer.mod_sgle[i] + ")" + " (" + (i + 1) + ") <br>");
+            }
+            var check = 0;
+            var stp = 0;
+            var stp_3 = 0;
+            var stp_2 = 1;
+            var buff_stp2 = 1;
+            var buff_stp3 = 2;
+            for (var i = 0; i < answer.step; i++) {
+                document.write("<br> Bước " + (i + 1) + ":<br> <br>");
+                document.write("Chọn phương trình " + "(" + answer.index_mod[i + stp] + ")" + " có mod lớn nhất: <br>");
+                document.write("(" + answer.index_mod[i + stp] + ")" + " <=> " + "x = " + answer.temp_t[i] + "t + " + answer.temp_a[i] + " (" + (i + 1) + "*" + ") <br>");
+                document.write("Thay (" + (i + 1) + "*" + ") vào " + "(" + answer.index_mod[i + stp_2] + "): <br>");
+                answer.index_mod[i + stp] = answer.index_mod[i + stp] - 1;
+                answer.index_mod[i + stp_2] = answer.index_mod[i + stp_2] - 1;
+                document.write(answer.temp_t[i] + "t + " + answer.temp_a[i] + " = " + answer.b_sgle[answer.index_mod[i + stp_2]] + " mod(" + answer.mod_sgle[answer.index_mod[i + stp_2]] + ") <br>");
+                document.write("<=> " + answer.val_t[i + stp] + "t + " + answer.val_a[i + stp] + " = " + answer.b_sgle[answer.index_mod[i + stp_2]] + " mod(" + answer.mod_sgle[answer.index_mod[i + stp_2]] + ") <br>");
+                document.write("<=> " + answer.val_t[i + stp] + "t  = " + answer.b_answ[i + stp_3] + " mod(" + answer.mod_answ[i + stp_3] + ") <br>");
+                document.write("<=> " + answer.a_answ[i + buff_stp2] + "t = " + answer.b_answ[i + buff_stp2] + " mod" + "(" + answer.mod_answ[i + buff_stp2] + ") <br>");
+                document.write("<=> " + "t = " + answer.mod_answ[i + buff_stp2] + "k + " + answer.b_answ[i + buff_stp2] + "<br>");
+                document.write("Thay t vào (" + (i + 1) + "*), ta được: <br>");
+                document.write("<=> " + "x = " + answer.temp_t[i] + "(" + answer.mod_answ[i + buff_stp2] + "k + " + answer.b_answ[i + buff_stp2] + ")" + " + " + answer.temp_a[i] + "<br>");
+                document.write("<=> " + "x = " + answer.val_t[i + stp_2] + "k + " + answer.val_a[i + stp_2] + "<br>");
+                document.write("Kết quả: <br>")
+                answer.index_mod[i + stp_2] = answer.index_mod[i + stp_2] + 1;
+                document.write(answer.a_answ[i + buff_stp3] + "x đồng dư " + answer.b_answ[i + buff_stp3] + " mod" + "(" + answer.mod_answ[i + buff_stp3] + ")" + " (" + answer.index_mod[[i + stp_2]] + ") <br>");
+                if (i < 1) {
+                    stp = 1;
+                    stp_2 = 2;
+                    stp_3 = 2;
+                    buff_stp2 = 3;
+                    buff_stp3 = 4;
+                }
+                else {
+                    stp = 2;
+                    stp_2 = 3;
+                    stp_3 = 4;
+                    buff_stp2 = 5;
+                    buff_stp3 = 6;
+                }
+            }
+        }
+    </script>
+    </section>
+
+    </div>
+    <script type="text/javascript">
+        function popup() {
+            var point2 = document.getElementById('contaners');
+            point2.classList.toggle('active');
+            var point1 = document.getElementById('popupstart');
+            point1.classList.toggle('active');
+            document.getElementById("loca2").innerHTML = "<div id='loca2'></div>";
+            document.getElementById("turnno").innerHTML = "<div id='turnno'></div>";
+            document.getElementById("location").innerHTML = "<div id='location'></div>";
+            document.getElementById("kq").innerHTML = "<div id='kq'></div>";
+        }
+        function popup_2nd() {
+            var point2 = document.getElementById('contaners');
+            point2.classList.toggle('active');
+            var point = document.getElementById("popupnd");
+            point.classList.toggle("active");
+        }
+        window.addEventListener('scroll', function () {
+            var header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+    </script>
+    <script type="text/javascript" src="./core2.js"></script>
+</body>
+
+</html>

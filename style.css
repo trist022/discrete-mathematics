@@ -1,0 +1,379 @@
+@charset "utf-8";
+
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+.banner{
+    position: relative;
+    font-family: 'Lobster', cursive;
+    background: url(./backgr1.png);
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.banner h2{
+    margin: 0px 0px 50px;
+    font-size: 50px;
+    color: rgb(241, 243, 243);
+    text-shadow: 0 0 10px black;
+}
+
+.banner h3{
+    margin: 0px 0px 50px;
+    font-size: 30px;
+    color: rgb(241, 243, 243);
+    text-shadow: 0 0 10px black;
+}
+.banner a{
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+    padding: 8px 14px;
+    background: cyan;
+    color: white;
+    box-shadow: 0 0 10px black;
+    transition: 0.3s;
+}
+
+.banner a:hover{
+    color: rgb(68, 76, 92);
+    background: yellowgreen;
+    box-shadow: 0 0 10px yellowgreen,0 0 20px yellowgreen,0 0 40px yellowgreen,0 0 60px yellowgreen;
+}
+
+header{
+    font-family: "roboto",sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    padding: 40px 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.sticky{
+    background: #fff;
+    padding: 20px 120px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+header .logo{
+    color: #ffffff;
+    box-shadow: 0 0 5px cyan;
+    padding: 2px 3px 3px 8px;
+    text-shadow: 0 0 10px black;
+}
+
+header .logo strong{
+    font-family: 'Lobster', cursive;
+}
+
+header .logo a{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 38px;
+    font-weight: 700;
+}
+header.sticky .logo a{
+    color: #111;
+    font-size: 28px;
+    font-weight: 600;
+    text-shadow: none;
+    letter-spacing: 3px;
+}
+header .menutop li {
+    position: relative;
+    list-style: none;
+    display: inline-block;
+}
+header .menutop li a{
+    display: block;
+    position: relative;
+    margin: 0 25px;
+    text-decoration: none;
+    color: #ffffff;
+    transition: 0.3s all;
+}
+header.sticky .menutop li a{
+    color: #111;
+    padding: 5px 10px;
+}
+header.sticky .menutop{
+    margin-right: -40px;
+}
+.active,header .menutop li a:hover{
+    display: block;
+
+    color: yellowgreen;
+    padding: 5px 10px;
+}
+header.sticky .menutop .active, header.sticky .menutop li a:hover{
+    background: #fff;
+    color: aqua;
+}
+header .menutop #sub1{
+    position: absolute;
+    display: none;
+    background: cyan;
+    width: 92px;
+    right: 25px;
+    text-align: center;
+}
+header.sticky .menutop #sub1{
+    background: #fff;
+}
+header .menutop #sub1 li a{
+    display: block;
+    padding: 0 0;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+header .menutop li:hover > #sub1{
+    display: block;
+    animation: dropdown 0.5s ease;
+}
+
+@keyframes dropdown{
+    0%{
+        opacity: 0;
+        transform: rotateY(18px);
+    }
+    100%{
+        opacity: 1;
+        transform: none;
+    }
+}
+.bground1{
+    min-height: 100vh;
+    display: flex;
+    background-image: linear-gradient(-20deg, #ff2846 0%, #6944ff 100%);
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+.container{
+    margin-top: 200px;
+    width: 800px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.container .card{
+    position: relative;
+}
+.container .card .face {
+    width: 300px;
+    height: 200px;
+    transition: 0.5s;
+}
+.container .card .face.face1{
+    position: relative;
+    left: 25px;
+    top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    flex-direction: column; 
+    background: #333;
+    transform: translateY(100px);
+}
+.container .card:hover .face.face1{
+    background-color: #ff0057;
+    transform: translateY(0px);
+}
+.container .card .face.face2{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 25px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgb(0,0,0,0.8);
+    text-align: center;
+    background: #fff;
+    transform: translateY(-100px);
+}
+.container .card:hover .face.face2 {
+    transform: translateY(0);
+}
+.container .card .face.face1 h3{
+    margin-top: 10px;
+    font-size: 1.5em;
+    text-align: center;
+    color: #fff;
+}
+.container .card .face.face2 a{
+    margin-top: 10px;
+    display: inline-block;
+    padding: 5px;
+    border: 1px solid black;
+    color: #333;
+    text-decoration: none;
+    font-weight: 900;
+    /* transition: 0.3s; */
+}
+.container .card .face.face2 .conten a:hover{
+    background-color: #333;
+    color: #fff;
+}
+.container .card .face.face1 .conten #img1{
+    margin-left: 10px;
+}
+.container .card .face.face1 .conten #img3{
+    margin-left: 25px;
+}
+.container .card .face.face2 .conten a{
+    margin-top: 20px;
+}
+.container .card .face.face1 .conten{
+    opacity: 0.5;
+    transition: 0.5s;
+}
+.container .card:hover .face.face1 .conten{
+    opacity: 1;
+}
+.container .card .face.face1 .conten img{
+    margin-left: 20px;
+}
+
+.container#contaners.active{
+    filter:blur(20px);
+    pointer-events: none;
+    user-select: none;
+}
+#popupstart{
+    position: fixed;
+    top: 0%;
+    left: 30%;
+    transform: translate(-50%,-50);
+    width: 600px;
+    padding: 50px;
+    box-shadow: 0 5px 30px rgb(0,0,0,.30);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    background-color: #fff;
+    z-index: 50;
+}
+#popupstart.active{
+    top: 18%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+    color: black;
+}
+#popupstart a{
+    margin-top: 10px;
+    display: inline-block;
+    padding: 5px;
+    border: 1px solid black;
+    color: #333;
+    text-decoration: none;
+    font-weight: 900;
+}
+#popupstart a:hover{
+    background-color: #333;
+    color: #fff;
+}
+#popupth.active a:hover{
+    background-color: #333;
+    color: #fff;
+}
+#popupstart.active span{
+    color: black;
+}
+#popupstart.active a{
+    position: relative;
+    left: 45%;
+}
+#popupstart.active #close{
+    left: 90%;
+}
+#popupstart.active #start{
+    left: 25%;
+}
+#popupstart.active #printresult{
+    left: 45%;
+}
+#popupstart.active #btn{
+    left: 33%;
+}
+}
+#popupstart.active #kqua{
+    color: red;
+}
+#popupnd{
+    position: fixed;
+    top: 20%;
+    left: 30%;
+    transform: translate(-50%,-50);
+    width: 600px;
+    padding: 50px;
+    box-shadow: 0 5px 30px rgb(0,0,0,.30);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    background-color: #fff;
+    z-index: 50;
+    line-height: 1.5;
+}
+#popupnd.active{
+    top: 25%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+    color: black;
+}
+#popupnd a{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 45%;
+    display: inline-block;
+    padding: 5px;
+    border: 1px solid black;
+    color: #333;
+    text-decoration: none;
+    font-weight: 900;
+}
+#popupnd.active a:hover{
+    background-color: #333;
+    color: #fff;
+}
+#popupnd #close{
+    margin-left: 90%;
+}
+.error{
+    color: red;
+}
+#a,#b,#a1,#b1{
+    margin-top: 15px;
+    position: relative;
+    left: 15%;
+}
+#mod,#mod1{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    position: relative;
+    left: 11%;
+}
+#n1{
+    margin-top: 15px;
+    position: relative;
+    left: 15%;
+}
